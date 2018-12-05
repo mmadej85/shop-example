@@ -1,5 +1,6 @@
 package pl.java.workshops.shop;
 
+import org.springframework.stereotype.Component;
 import pl.java.workshops.item.ShoppingItem;
 import pl.java.workshops.promotions.Promotion;
 import pl.java.workshops.promotions.SimplePercentagePromotion;
@@ -8,11 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class Basket {
 
     private int price;
     private List<ShoppingItem> items = new ArrayList<>();
     private List<Promotion> promotions = new ArrayList<>();
+
+    public Basket (){};
 
     public Basket(List<Promotion> promotions) {
         this.promotions = promotions;
