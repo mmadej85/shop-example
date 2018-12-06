@@ -16,7 +16,10 @@ public class Basket {
     private List<ShoppingItem> items = new ArrayList<>();
     private List<Promotion> promotions = new ArrayList<>();
 
-    public Basket (){};
+    public Basket() {
+    }
+
+    ;
 
     public Basket(List<Promotion> promotions) {
         this.promotions = promotions;
@@ -43,5 +46,10 @@ public class Basket {
             ShoppingItem item = cheaperItems.get(0);
             price -= cheaperItems.size() * (promotion.getPercentage() / 100.0) * item.getPrice();
         }
+    }
+
+    @Override
+    public String toString() {
+        return items.toString();
     }
 }
