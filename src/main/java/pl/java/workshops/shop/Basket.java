@@ -44,4 +44,9 @@ public class Basket {
             price -= cheaperItems.size() * (promotion.getPercentage() / 100.0) * item.getPrice();
         }
     }
+
+    @Override
+    public String toString() {
+        return items.toString();
+    }
 }
