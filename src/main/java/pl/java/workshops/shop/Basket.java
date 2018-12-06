@@ -16,10 +16,7 @@ public class Basket {
     private List<ShoppingItem> items = new ArrayList<>();
     private List<Promotion> promotions = new ArrayList<>();
 
-    public Basket() {
-    }
-
-    ;
+    public Basket(){};
 
     public Basket(List<Promotion> promotions) {
         this.promotions = promotions;
