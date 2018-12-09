@@ -1,6 +1,8 @@
 package pl.java.workshops.inventory;
 
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import pl.java.workshops.item.ClothingItem;
 import pl.java.workshops.item.GroceryItem;
 import pl.java.workshops.item.ShoppingItem;
@@ -12,10 +14,11 @@ import java.util.Scanner;
 
 import static java.lang.Integer.valueOf;
 
+@Component
 public class ItemDictionaryReader implements Reader<ShoppingItem> {
     private String fileName;
 
-    public ItemDictionaryReader(String fileName) {
+    public ItemDictionaryReader(@Value("${items.filename}") String fileName) {
         this.fileName = fileName;
     }
 
