@@ -17,7 +17,7 @@ public class PromotionsController {
     PromotionDictionaryReader reader;
 
     @RequestMapping("/promotions")
-    public List<ShoppingItem> index() {
+    public List<Promotion> index() {
         return reader.read();
 
 }}
