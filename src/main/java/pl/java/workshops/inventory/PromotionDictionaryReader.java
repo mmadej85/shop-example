@@ -1,6 +1,8 @@
 package pl.java.workshops.inventory;
 
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import pl.java.workshops.promotions.Promotion;
 import pl.java.workshops.promotions.SimplePercentagePromotion;
 
@@ -11,11 +13,12 @@ import java.util.Scanner;
 
 import static java.lang.Integer.valueOf;
 
+@Component
 public class PromotionDictionaryReader implements Reader<Promotion> {
 
     private String fileName;
 
-    public PromotionDictionaryReader(String fileName) {
+    public PromotionDictionaryReader(@Value("${promotions.filename}") String fileName) {
         this.fileName = fileName;
     }
 

@@ -22,5 +22,4 @@ public class PromotionsController {
     @RequestMapping("/promotions")
     public List<Promotion> index() {
         return reader.read();
-
     }}
