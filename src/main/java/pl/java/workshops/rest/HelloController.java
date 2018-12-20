@@ -17,7 +17,6 @@ public class HelloController {
     public String index() {
         basket.addProduct(new ShoppingItem("1","grocery","cola",10));
         return basket.toString();
-
     }
 
 }

@@ -18,7 +18,8 @@ import static java.lang.Integer.valueOf;
 public class ItemDictionaryReader implements Reader<ShoppingItem> {
     private String fileName;
 
-    public ItemDictionaryReader(@Value("${items.filename}") String fileName) {
+    public ItemDictionaryReader(@Value("${items.filename}")
+                                        String fileName) {
         this.fileName = fileName;
     }
 
