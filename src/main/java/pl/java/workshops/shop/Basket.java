@@ -38,7 +38,7 @@ public class Basket {
 
     private void applySimplePercentagePromotion(SimplePercentagePromotion promotion) {
         List<ShoppingItem> cheaperItems =
-                items.stream().filter(i -> i.getId().equals(promotion.getItemId())).collect(Collectors.toList());
+                items.stream().filter(i -> i.getId().equals(promotion.getItem().getId())).collect(Collectors.toList());
         if (cheaperItems.size() > 0) {
             ShoppingItem item = cheaperItems.get(0);
             price -= cheaperItems.size() * (promotion.getPercentage() / 100.0) * item.getPrice();
