@@ -15,7 +15,7 @@ public class ItemDictionaryReaderTest {
 
     @Test
     public void shouldCorrectlyReadItems() {
-        ArrayList<ShoppingItem> items = reader.read();
+        ArrayList<ShoppingItem> items = reader.read(items);
 
         assertThat(items.size(), is(equalTo(4)));
         assertThat(items.get(0).getName(), is(equalTo("smoothie")));

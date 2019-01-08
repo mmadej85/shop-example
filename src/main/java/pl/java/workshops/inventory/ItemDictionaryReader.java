@@ -10,6 +10,7 @@ import pl.java.workshops.item.ShoppingItem;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.Integer.valueOf;
@@ -23,7 +24,6 @@ public class ItemDictionaryReader implements Reader<ShoppingItem> {
         this.fileName = fileName;
     }
 
-    @Override
     public ArrayList<ShoppingItem> read() {
         ArrayList<ShoppingItem> items = new ArrayList<>();
         File file = FileUtil.getFile(fileName);

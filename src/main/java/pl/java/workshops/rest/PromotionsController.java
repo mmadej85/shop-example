@@ -8,8 +8,8 @@ import pl.java.workshops.inventory.ItemDictionaryReader;
 import pl.java.workshops.inventory.PromotionDictionaryReader;
 import pl.java.workshops.item.ShoppingItem;
 import pl.java.workshops.promotions.Promotion;
-import pl.java.workshops.promotions.SimplePercentagePromotion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,9 +17,12 @@ import java.util.List;
 public class PromotionsController {
 
     @Autowired
-    PromotionDictionaryReader reader;
+    PromotionDictionaryReader promotionDictionaryReader;
+    @Autowired
+    ItemDictionaryReader itemDictionaryReader;
 
     @RequestMapping("/promotions")
     public List<Promotion> index() {
-        return reader.read();
+        ArrayList<ShoppingItem> items = itemDictionaryReader.read();
+        return promotionDictionaryReader.read(items);
     }}

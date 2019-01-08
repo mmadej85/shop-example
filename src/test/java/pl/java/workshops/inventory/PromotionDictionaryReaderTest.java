@@ -16,7 +16,7 @@ public class PromotionDictionaryReaderTest {
 
     @Test
     public void shouldCorrectlyReadPromotions() {
-        ArrayList<Promotion> promotions = reader.read();
+        ArrayList<Promotion> promotions = reader.read(items);
 
         assertThat(promotions.size(), is(equalTo(2)));
         assertThat(promotions.get(0).getItemId(), is(equalTo("1")));

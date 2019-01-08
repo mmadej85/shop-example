@@ -1,19 +1,20 @@
 package pl.java.workshops.promotions;
 
 
+import pl.java.workshops.item.ShoppingItem;
+
 public class SimplePercentagePromotion implements Promotion {
-    private String itemId;
+    private ShoppingItem item;
 
     private int percentage;
 
-    public SimplePercentagePromotion(String itemId, int percentage) {
-        this.itemId = itemId;
+    public SimplePercentagePromotion(ShoppingItem item, int percentage) {
+        this.item = item;
         this.percentage = percentage;
     }
 
-    @Override
-    public String getItemId() {
-        return itemId;
+    public ShoppingItem getItem() {
+        return item;
     }
 
     public int getPercentage() {
@@ -22,6 +23,6 @@ public class SimplePercentagePromotion implements Promotion {
 
     @Override
     public String toString() {
-        return percentage + "% discount - For Product " + itemId;
+        return percentage + "% discount - For Product " + item;
     }
 }
